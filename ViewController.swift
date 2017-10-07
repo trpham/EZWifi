@@ -78,7 +78,10 @@ class ViewController: UIViewController, QRCodeReaderViewControllerDelegate {
                 alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
             }
             
-            present(alert, animated: true, completion: nil)
+//            present(alert, animated: true, completion: nil)
+            
+            // Start Scanning agian
+//            reader.startScanning()
             
             return false
         }
@@ -131,7 +134,25 @@ class ViewController: UIViewController, QRCodeReaderViewControllerDelegate {
                     print ("HI")
                     // Handle error or success
                     print(error?.localizedDescription as Any)
+                    reader.startScanning()
                 }
+//        reader.startScanning()
+        
+//        print("hi")
+//        guard checkScanPermissions() else { return }
+//        
+//        readerVC.modalPresentationStyle = .formSheet
+//        readerVC.delegate               = self
+//        
+//        readerVC.completionBlock = { (result: QRCodeReaderResult?) in
+//            if let result = result {
+//                print("Completion with result: \(result.value) of type \(result.metadataType)")
+//            }
+//        }
+        
+//        present(readerVC, animated: true, completion: nil)
+//
+//        present(readerVC, animated: true, completion: nil)
         
 //        dismiss(animated: true) { [weak self] in
 //            let alert = UIAlertController(
