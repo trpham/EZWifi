@@ -39,6 +39,9 @@ import NetworkExtension
 class ViewController: UIViewController, QRCodeReaderViewControllerDelegate {
     //  @IBOutlet weak var previewView: QRCodeReaderView!
     lazy var reader: QRCodeReader = QRCodeReader()
+    
+    @IBAction func unwindToMenu(segue: UIStoryboardSegue) {}
+    
     lazy var readerVC: QRCodeReaderViewController = {
         let builder = QRCodeReaderViewControllerBuilder {
             $0.reader = QRCodeReader(metadataObjectTypes: [AVMetadataObject.ObjectType.qr], captureDevicePosition: .back)

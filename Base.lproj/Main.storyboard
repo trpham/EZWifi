@@ -19,16 +19,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pGb-Yt-NlT">
-                                <rect key="frame" x="28" y="258" width="320" height="150"/>
+                                <rect key="frame" x="27" y="322" width="320" height="150"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9v4-g1-KUd">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="150"/>
+                                        <rect key="frame" x="85" y="32" width="150" height="150"/>
                                         <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" secondItem="9v4-g1-KUd" secondAttribute="height" multiplier="1:1" constant="170" id="T1S-87-wMl"/>
+                                            <constraint firstAttribute="width" secondItem="9v4-g1-KUd" secondAttribute="height" multiplier="1:1" id="T1S-87-wMl"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                        <state key="normal" title="Scan Wifi">
+                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                        <state key="normal" title="SCAN WIFI">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
@@ -38,36 +39,34 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="9v4-g1-KUd" secondAttribute="bottom" constant="-32" id="ALy-dH-gcO"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="9v4-g1-KUd" secondAttribute="trailing" id="Kbh-fI-jcI"/>
                                     <constraint firstAttribute="height" constant="150" id="UQf-7o-Mnx"/>
-                                    <constraint firstItem="9v4-g1-KUd" firstAttribute="leading" secondItem="pGb-Yt-NlT" secondAttribute="leading" id="YQC-D2-Qbs"/>
+                                    <constraint firstItem="9v4-g1-KUd" firstAttribute="leading" secondItem="pGb-Yt-NlT" secondAttribute="leading" constant="85" id="cTS-Om-Ssw"/>
                                     <constraint firstAttribute="width" constant="320" id="ggK-Kf-qET"/>
-                                    <constraint firstItem="9v4-g1-KUd" firstAttribute="top" secondItem="pGb-Yt-NlT" secondAttribute="top" id="hF2-o2-Oi7"/>
-                                    <constraint firstAttribute="bottom" secondItem="9v4-g1-KUd" secondAttribute="bottom" id="hih-um-6RQ"/>
-                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="9v4-g1-KUd" secondAttribute="trailing" id="uze-Ky-bxH"/>
+                                    <constraint firstItem="9v4-g1-KUd" firstAttribute="top" secondItem="pGb-Yt-NlT" secondAttribute="top" constant="32" id="ydd-Ug-d6G"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j2f-J3-eZZ">
-                                <rect key="frame" x="28" y="96" width="320" height="160"/>
-                                <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j2f-J3-eZZ">
+                                <rect key="frame" x="111" y="174" width="150" height="150"/>
+                                <color key="backgroundColor" red="0.0078946080270000003" green="0.31180649980000003" blue="0.97105586529999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="j2f-J3-eZZ" secondAttribute="height" multiplier="1:1" constant="160" id="ym0-MP-K4O"/>
+                                    <constraint firstAttribute="width" secondItem="j2f-J3-eZZ" secondAttribute="height" multiplier="1:1" id="ym0-MP-K4O"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <state key="normal" title="Add Wifi">
-                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <state key="normal" title="ADD WIFI"/>
                                 <connections>
-                                    <segue destination="7c4-d2-uzm" kind="show" id="1bm-XZ-NGj"/>
+                                    <segue destination="7c4-d2-uzm" kind="presentation" id="1bm-XZ-NGj"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="j2f-J3-eZZ" firstAttribute="top" secondItem="QzU-kT-cN2" secondAttribute="top" constant="32" id="6Tu-Me-ZTW"/>
+                            <constraint firstItem="j2f-J3-eZZ" firstAttribute="top" secondItem="QzU-kT-cN2" secondAttribute="top" constant="110" id="6Tu-Me-ZTW"/>
                             <constraint firstItem="pGb-Yt-NlT" firstAttribute="centerX" secondItem="0pp-Mx-1gQ" secondAttribute="centerX" id="7FH-Zw-tUE"/>
-                            <constraint firstItem="j2f-J3-eZZ" firstAttribute="centerX" secondItem="0pp-Mx-1gQ" secondAttribute="centerX" id="89J-2C-D9q"/>
-                            <constraint firstItem="pGb-Yt-NlT" firstAttribute="centerY" secondItem="0pp-Mx-1gQ" secondAttribute="centerY" id="89u-2a-v4I"/>
-                            <constraint firstItem="pGb-Yt-NlT" firstAttribute="top" secondItem="j2f-J3-eZZ" secondAttribute="bottom" constant="2" id="zLa-8Z-SMm"/>
+                            <constraint firstItem="j2f-J3-eZZ" firstAttribute="centerX" secondItem="0pp-Mx-1gQ" secondAttribute="centerX" constant="-1.5" id="89J-2C-D9q"/>
+                            <constraint firstItem="pGb-Yt-NlT" firstAttribute="centerY" secondItem="0pp-Mx-1gQ" secondAttribute="centerY" constant="63.5" id="89u-2a-v4I"/>
+                            <constraint firstItem="pGb-Yt-NlT" firstAttribute="top" secondItem="j2f-J3-eZZ" secondAttribute="bottom" constant="-2" id="zLa-8Z-SMm"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="QzU-kT-cN2"/>
                     </view>
@@ -85,54 +84,75 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Add your wifi" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="doq-ZQ-cxU">
-                                <rect key="frame" x="72" y="99" width="232" height="21"/>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3ru-59-Dds">
+                                <rect key="frame" x="41" y="68" width="24" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nbg-MK-dmG">
-                                <rect key="frame" x="108" y="145" width="227" height="30"/>
+                                <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xne-n5-HBa">
+                                <rect key="frame" x="40" y="153" width="27" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" adjustsFontSizeToFit="NO" minimumFontSize="18" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="nbg-MK-dmG">
+                                <rect key="frame" x="53" y="68" width="281" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="contentStretch" x="0.0" y="1" width="0.0" height="0.0"/>
                                 <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Eu6-hV-QEh">
-                                <rect key="frame" x="108" y="200" width="227" height="30"/>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" adjustsFontSizeToFit="NO" minimumFontSize="24" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="Eu6-hV-QEh">
+                                <rect key="frame" x="53" y="153" width="282" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mm2-0I-xx8">
-                                <rect key="frame" x="72" y="262" width="232" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Generate QR Code"/>
-                                <connections>
-                                    <action selector="generateQRCode:" destination="7c4-d2-uzm" eventType="touchUpInside" id="LKg-7o-uGZ"/>
-                                </connections>
-                            </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zb6-mY-4hu">
-                                <rect key="frame" x="58" y="315" width="260" height="260"/>
+                                <rect key="frame" x="41" y="303" width="294" height="294"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Password" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ayl-HV-axf">
-                                <rect key="frame" x="16" y="199" width="92" height="34"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="PASSWORD" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ayl-HV-axf">
+                                <rect key="frame" x="120" y="123" width="130" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="SSID" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Ek-Wn-RgZ">
-                                <rect key="frame" x="47" y="150" width="48" height="21"/>
+                                <rect key="frame" x="161" y="45" width="48" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HTc-gV-Sau">
+                                <rect key="frame" x="0.0" y="630" width="375" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Cancel">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="orderButtonTapped:" destination="7c4-d2-uzm" eventType="touchUpInside" id="7Qx-O9-XQs"/>
+                                    <segue destination="83q-3G-j29" kind="unwind" identifier="unwindToMenu" unwindAction="unwindToMenuWithSegue:" id="GIo-td-63W"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mm2-0I-xx8" customClass="MDCRaisedButton">
+                                <rect key="frame" x="40" y="229" width="294" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0078946080274148091" green="0.31180649982117309" blue="0.97105586528778076" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" title="GENERATE QRCODE">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="generateQRCode:" destination="7c4-d2-uzm" eventType="touchUpInside" id="LKg-7o-uGZ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="l0a-tX-6v6"/>
@@ -144,6 +164,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DQf-3J-8nv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="83q-3G-j29" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1085.5999999999999" y="83.208395802098963"/>
         </scene>

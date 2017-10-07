@@ -18,6 +18,9 @@ class QRGeneratorViewController: UIViewController {
     
     let codeGenerator = FCBBarCodeGenerator()
     
+    @IBAction func orderButtonTapped(_ sender: Any) {
+        self.performSegue(withIdentifier: "unwindToMenu", sender: self)
+    }
     @IBAction func generateQRCode(_ sender: Any) {
         
 //        print ("hi")
