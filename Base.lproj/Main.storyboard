@@ -5,6 +5,7 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13165.3"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -13,36 +14,48 @@
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="EZWifi" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" id="0pp-Mx-1gQ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="scanView" translatesAutoresizingMaskIntoConstraints="NO" id="4j9-YA-rHd">
-                                <rect key="frame" x="57" y="117" width="260" height="260"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
-                                        <integer key="value" value="10"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="layer.borderColor">
-                                        <color key="value" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
-                                </userDefinedRuntimeAttributes>
-                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pGb-Yt-NlT">
+                                <rect key="frame" x="27.5" y="258" width="320" height="150"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9v4-g1-KUd">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="150"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="9v4-g1-KUd" secondAttribute="height" multiplier="1:1" constant="170" id="T1S-87-wMl"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                        <state key="normal" title="Scan Wifi">
+                                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="scanInModalAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KUB-xx-tZE"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="UQf-7o-Mnx"/>
+                                    <constraint firstItem="9v4-g1-KUd" firstAttribute="leading" secondItem="pGb-Yt-NlT" secondAttribute="leading" id="YQC-D2-Qbs"/>
+                                    <constraint firstAttribute="width" constant="320" id="ggK-Kf-qET"/>
+                                    <constraint firstItem="9v4-g1-KUd" firstAttribute="top" secondItem="pGb-Yt-NlT" secondAttribute="top" id="hF2-o2-Oi7"/>
+                                    <constraint firstAttribute="bottom" secondItem="9v4-g1-KUd" secondAttribute="bottom" id="hih-um-6RQ"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="9v4-g1-KUd" secondAttribute="trailing" id="uze-Ky-bxH"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <constraints>
+                            <constraint firstItem="pGb-Yt-NlT" firstAttribute="centerX" secondItem="0pp-Mx-1gQ" secondAttribute="centerX" id="7FH-Zw-tUE"/>
+                            <constraint firstItem="pGb-Yt-NlT" firstAttribute="centerY" secondItem="0pp-Mx-1gQ" secondAttribute="centerY" id="89u-2a-v4I"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="QzU-kT-cN2"/>
                     </view>
-                    <connections>
-                        <outlet property="scanImageView" destination="4j9-YA-rHd" id="jgD-Jb-IFy"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
     </scenes>
-    <resources>
-        <image name="scanView" width="1721" height="1721"/>
-    </resources>
 </document>
