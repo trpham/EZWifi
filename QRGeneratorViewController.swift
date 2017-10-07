@@ -37,20 +37,13 @@ class QRGeneratorViewController: UIViewController {
         password.resignFirstResponder()
         SSID.resignFirstResponder()
         
-//        QRCodeImageView.image = {
-//            var qrCode = QRCode(wifiSecretKey)
-//            qrCode?.size = self.QRCodeImageView.bounds.size
-//            qrCode?.errorCorrection = .High
-//            return qrCode?.image
-//        }()
-        
-//        submitWifi(wifiSecretKey, SSID.text, password.text)
+        submitWifi(key: wifiSecretKey, ssid: SSID.text!, password: password.text!)
     }
     
-//    func submitWifi(wifiSecretKey) {
-//
-//
-//    }
+    func submitWifi(key: String, ssid: String, password: String) {
+
+
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
