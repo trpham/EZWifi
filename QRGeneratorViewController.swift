@@ -40,12 +40,29 @@ class QRGeneratorViewController: UIViewController {
         password.resignFirstResponder()
         SSID.resignFirstResponder()
         
-        submitWifi(key: wifiSecretKey, ssid: SSID.text!, password: password.text!)
+        submitWifi(wifiSecretKey: wifiSecretKey, ssid: SSID.text!, password: password.text!)
     }
     
-    func submitWifi(key: String, ssid: String, password: String) {
-
-
+    func submitWifi(wifiSecretKey: String, ssid: String, password: String) {
+        let url = "http://ezwifi.azurewebsites.net/putWifiInfo/" + wifiSecretKey + "/" + ssid + "/" + password
+        
+        let params = [String:String]()
+        
+        HTTP.POST(url, parameters: params) { response in
+            //do things...
+//            print("111 data is: \(response.error)")
+//            print("222 data is: \(response.description)")
+//            print("333 data is: \(response.data)")
+        }
+//        let url = "http://ezwifi.azurewebsites.net/getWifiInfo/test1"
+//        HTTP.GET(url) { response in
+//            if let err = response.error {
+//                print("error: \(err.localizedDescription)")
+//                return //also notify app of failure as needed
+//            }
+//            print("opt finished: \(response.description)")
+//            print("data is: \(response.data)")
+//        }
     }
     
     override func viewDidLoad() {

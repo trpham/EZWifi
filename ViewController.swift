@@ -32,9 +32,11 @@
  *
  */
 
+
 import AVFoundation
 import UIKit
 import NetworkExtension
+
 
 class ViewController: UIViewController, QRCodeReaderViewControllerDelegate {
     //  @IBOutlet weak var previewView: QRCodeReaderView!
@@ -123,19 +125,73 @@ class ViewController: UIViewController, QRCodeReaderViewControllerDelegate {
     
     // MARK: - QRCodeReader Delegate Methods
     
+    
     func reader(_ reader: QRCodeReaderViewController, didScanResult result: QRCodeReaderResult) {
         reader.stopScanning()
         
-                let WiFiConfig = NEHotspotConfiguration(ssid: "BSCSlow", passphrase: "coopdemocracy", isWEP: false)
+//        print("777777" + result.value)
         
-                WiFiConfig.joinOnce = false
-                NEHotspotConfigurationManager.shared.apply(WiFiConfig) { error in
+        let url = "http://ezwifi.azurewebsites.net/getWifiInfo/" + result.value
         
-                    print ("HI")
-                    // Handle error or success
-                    print(error?.localizedDescription as Any)
-                    reader.startScanning()
+        HTTP.GET(url) { response in
+            if let err = response.error {
+                print("error: \(err.localizedDescription)")
+                return //also notify app of failure as needed
+            }
+            
+            if let jsonObj = try? JSONSerialization.jsonObject(with: response.data, options: .allowFragments) as? NSDictionary {
+                
+                //printing the json in console
+                print(jsonObj!.value(forKey: "data")!)
+                
+                //getting the avengers tag array from json and converting it to NSArray
+                if let heroeArray = jsonObj!.value(forKey: "data") as? NSArray {
+                    //looping through all the elements
+                    for heroe in heroeArray {
+                    
+                        //converting the element to a dictionary
+                        if let heroeDict = heroe as? NSDictionary {
+
+                            //getting the name from the dictionary
+                            if let name = heroeDict.value(forKey: "userName") {
+                                
+                                if let pass = heroeDict.value(forKey: "password") {
+                                    let WiFiConfig = NEHotspotConfiguration(ssid: name as! String, passphrase: pass as! String, isWEP: false)
+                                    //
+                                    WiFiConfig.joinOnce = false
+                        
+                                    NEHotspotConfigurationManager.shared.apply(WiFiConfig) { error in
+                        
+                                        print ("HI")
+                                        // Handle error or success
+                                        print(error?.localizedDescription as Any)
+                                        reader.startScanning()
+                                    }
+                                }
+                            }
+                        }
+                    }
                 }
+            }
+        }
+        
+        
+//
+//        let WiFiConfig = NEHotspotConfiguration(ssid: responseString["userName"], passphrase: response["password"], isWEP: false)
+//
+//        WiFiConfig.joinOnce = false
+
+//        let WiFiConfig = NEHotspotConfiguration(ssid: datas[data][userName], passphrase: response[data][password], isWEP: false)
+//
+//        WiFiConfig.joinOnce = false
+//
+//        NEHotspotConfigurationManager.shared.apply(WiFiConfig) { error in
+//
+//            print ("HI")
+//            // Handle error or success
+//            print(error?.localizedDescription as Any)
+//            reader.startScanning()
+//        }
 //        reader.startScanning()
         
 //        print("hi")
